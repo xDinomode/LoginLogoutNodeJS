@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi</title>
+</head>
+<body>
+        <h1>Admin page</h1>
+        <% if(user > 0) {%>
+                <div>
+                    <p><%= user %></p>
+                </div>
+        <% }%>
+        <h1>You are signed in</h1>
+
+        <a href = "/logout">Logout</a>
+</html>

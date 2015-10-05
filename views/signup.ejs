@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+</head>
+<body>
+        <h1>Sign up page</h1>
+        <% if(message.length > 0) {%>
+                <div>
+                    <p><%= message %></p>
+                </div>
+        <% }%>
+        <form method = "POST" action="/signup">
+            <input type = "text" name = "username" placeholder="Username">
+            <input type="password" name = "password" placeholder="Password">
+            <input type = "submit" value = "Submit">
+        </form>
+        <a href="/">Home page</a>
+</body>
+</html>
