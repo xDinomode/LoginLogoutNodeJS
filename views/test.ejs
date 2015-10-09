@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="yo">
+    <head>
+        <title>Test</title>
+        <script src= "/bower_components/angular/angular.min.js"></script>
+    </head>
+
+    <body>
+        <h1>test <%= user.username %></h1>
+        <input type="text" ng-model="yourName" placeholder = "name">
+        <input type="submit" value= "hey" ng-click = "alert()">
+        <h1>{{  yourName }}</h1>
+        <table>
+            <tr ng-repeat = "x in dat">
+                <td> {{ x.username | uppercase }}</td>
+                <td> {{ x.password }} </td>
+            </tr>
+        </table>
+        <script>
+        var app = angular.module("myApp", []);
+        app.controller("yo", function($scope, $http){
+            $http.get("/h").success(function(data){
+                $scope.dat = data;
+            });
+            $scope.alert = function(){
+                alert("hello world");
+            };
+        });
+        </script>
+    </body>
+
+</html>
+

@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>hi</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/indexcss.css">
 </head>
 <body>
-        <h1>Home page</h1>
-        <% if(message.length > 0) {%>
-                <div>
-                    <p><%= message %></p>
-                </div>
-        <% }%>
-        <form method = "POST" action="/login">
-            <input type = "text" name = "username" placeholder="Username">
-            <input type="password" name = "password" placeholder="Password">
-            <input type = "submit" value = "Submit">
-        </form>
-        <a href="/signup">Sign up</a>
+        <header id = "topHeader">
+                <h1>Home page</h1>
+
+                <% if(message.length > 0) {%>
+                        <div id = "hmessage">
+                            <p><%= message %></p>
+                        </div>
+                <% }%>
+
+                <form method = "POST" action="/login" id = "form">
+                    <input type = "text" name = "username" placeholder="Username" id="uname">
+                    <input type="password" name = "password" placeholder="Password" id="pword">
+                    <input type = "submit" value = "Submit" id="submt">
+                </form>
+
+                <a href="/signup" id ="signup">Sign up</a>
+        </header>
+
+        <div id = "bigbox">
+                <img src="http://orig12.deviantart.net/a321/f/2014/054/b/3/be_bold___eagle_digital_art_by_vandelium-d77gkzg.png" alt="cat">
+        </div>
+
+        <div id="about">
+            <h1>Sign up now for more!</h1>
+        </div>
 </body>
 </html>

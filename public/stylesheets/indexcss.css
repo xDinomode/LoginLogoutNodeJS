@@ -1,0 +1,76 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+#topHeader{
+    width:100%;
+    height:70px;
+}
+#topHeader h1{
+    width:20%;
+    float: left;
+    text-align:center;
+    height:100%;
+    line-height: 70px;
+}
+
+#form{
+    width:75%;
+    float:left;
+    height:100%;
+}
+
+#uname{
+    position:relative;
+    height:24px;
+    float:right;
+    top:42px;
+}
+#pword{
+    position:relative;
+    height:24px;
+    float:right;
+    top:42px;
+}
+#submt{
+    position:relative;
+    height:28px;
+    float:right;
+    background-color:#3399ff;
+    border:none;
+    top:42px;
+}
+#signup{
+    position:relative;
+    top:42px;
+    text-align:center;
+}
+
+
+#bigbox{
+    width:100%;
+    height:500px;
+    background:orange;
+}
+#bigbox img{
+    width:100%;
+    height:500px;
+}
+
+#about{
+    text-align:center;
+    width:100%;
+    height:200px;
+    background:#ffe85d;
+}
+#about h1{
+    line-height:200px;
+    color:white;
+}

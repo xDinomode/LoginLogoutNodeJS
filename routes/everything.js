@@ -6,6 +6,11 @@ var message = null;
 var User = require("../models/User.js");
 
 module.exports = function(passport){
+    Router.get("/", function(req, res, next){
+        console.log(req.method, req.url);
+        next();
+    });
+
     Router.get("/", function(req, res){
     if(req.isAuthenticated()) res.redirect("/admin");
     res.render("index", {message: req.flash("loginMessage")});
@@ -34,6 +39,17 @@ Router.get("/logout", function(req, res){
 
 Router.get("/admin", isLoggedIn, function(req, res){
     res.render("admin", {user: req.user });
+});
+
+Router.get("/test", isLoggedIn, function(req, res){
+    res.render("test", {user: req.user });
+});
+
+Router.get("/h", function(req, res){
+    User.find({}, function(err, data){
+        if(err) console.log(err);
+        res.json(data);
+    });
 });
 
 function isLoggedIn(req, res, next){

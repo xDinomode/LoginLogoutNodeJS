@@ -23,6 +23,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static(__dirname + "/public"));
+app.use("/bower_components", express.static(__dirname + "/bower_components"));
+
 passport.serializeUser(function(user, done){
     done(null, user.id);
 });
