@@ -41,7 +41,7 @@ passport.use("local-signup", new passportLocal({
     passReqToCallback: true
 }, function(req, username, password, done ){
     User.findOne({username: username}, function(err, user){
-        if(err) return done(err)
+        if(err) return done(err);
 
         if(user){
           return done(null, false, req.flash("signupMessage", "Username already taken"));
