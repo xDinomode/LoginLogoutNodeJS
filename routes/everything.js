@@ -41,8 +41,14 @@ Router.get("/admin", isLoggedIn, function(req, res){
     res.render("admin", {user: req.user });
 });
 
+//testing angular.js
 Router.get("/test", isLoggedIn, function(req, res){
     res.render("test", {user: req.user });
+});
+
+//testing three.js
+Router.get("/threed", isLoggedIn, function(req, res){
+    res.render("threed", {user: req.user });
 });
 
 Router.get("/h", function(req, res){
