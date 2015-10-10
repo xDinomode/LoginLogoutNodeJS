@@ -1,6 +1,7 @@
 var express = require("express");
 var Router = express.Router();
 var bcrypt = require("bcrypt-nodejs");
+var nasaKey = require("../nasaapi.js");
 
 var message = null;
 var User = require("../models/User.js");
@@ -43,7 +44,7 @@ Router.get("/admin", isLoggedIn, function(req, res){
 
 //testing angular.js
 Router.get("/test", isLoggedIn, function(req, res){
-    res.render("test", {user: req.user });
+    res.render("test", {user: req.user, key: nasaKey() });
 });
 
 //testing three.js

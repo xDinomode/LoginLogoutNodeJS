@@ -3,12 +3,13 @@
     <head>
         <title>Test</title>
         <script src= "/bower_components/angular/angular.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/testcss.css">
     </head>
 
     <body>
         <h1>test <%= user.username %></h1>
         <input type="text" ng-model="yourName" placeholder = "name">
-        <input type="submit" value= "hey" ng-click = "alert()">
+        <input type="submit" value= "hey">
         <h1>{{  yourName }}</h1>
         <table>
             <tr ng-repeat = "x in dat">
@@ -16,15 +17,24 @@
                 <td> {{ x.password }} </td>
             </tr>
         </table>
+
+        <div id = "nasaBox">
+            <h1>{{ nasa.title }}</h1>
+            <img ng-src="{{ nasa.url }}" alt="nasa">
+            <p>{{ nasa.explanation }}</p>
+        </div>
         <script>
         var app = angular.module("myApp", []);
         app.controller("yo", function($scope, $http){
             $http.get("/h").success(function(data){
                 $scope.dat = data;
             });
-            $scope.alert = function(){
-                alert("hello world");
-            };
+
+            $http.get("https://api.nasa.gov/planetary/apod?api_key=<%= key %>&format=JSON")
+                .success(function(data){
+                    $scope.nasa = data;
+                    console.log(data);
+                });
         });
         </script>
     </body>
