@@ -59,6 +59,10 @@ Router.get("/h", function(req, res){
     });
 });
 
+Router.get("/sass", function(re, res){
+    res.render("sass", {hi: "Hello"});
+});
+
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
 
