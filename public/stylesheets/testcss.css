@@ -1,13 +1,3 @@
-body{
-
-}
-#nasaBox{
-    text-align:center;
-    font-family: Helvetica, sans-serif;
-}
-#nasaBox h1{
-    color: #9F0038;
-}
-#nasaBox p{
-    color:#36648B;
-}
+body {
+  font-family: Helvetica, sans-serif;
+  color: #FF4444; }

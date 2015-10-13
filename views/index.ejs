@@ -19,6 +19,7 @@
                 <form method = "POST" action="/login" id = "form">
                     <input type = "text" name = "username" placeholder="Username" id="uname">
                     <input type="password" name = "password" placeholder="Password" id="pword">
+                    <input type="hidden" name="_csrf" value= <%= csrf %>>
                     <input type = "submit" value = "Submit" id="submt">
                 </form>
 
@@ -31,6 +32,7 @@
 
         <div id="about">
             <h1>Sign up now for more!</h1>
+
         </div>
 </body>
 </html>

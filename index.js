@@ -9,6 +9,7 @@ var flash = require("connect-flash");
 var User = require("./models/User.js");
 var bcrypt = require("bcrypt-nodejs");
 var app = express();
+var csurf = require("csurf");
 
 mongoose.connect("mongodb://localhost/sweg");
 
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({secret: "sdfadfasdf", resave: true, saveUninitialized:true}));
 app.use(flash());
+app.use(csurf());
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -90,5 +92,12 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.use("/", Router);
+
+app.use(function(err, req, res, next){
+  if(err.code !== "EBADCSRFTOKEN") return next();
+
+  res.status(403);
+  res.send("no tampering the csrf token!!");
+});
 
 app.listen(3000);

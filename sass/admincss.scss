@@ -1,0 +1,13 @@
+$font: Helvetica, sans-serif;
+$fontSize: 19px;
+
+$topHcolor: #FF4444;
+
+body{
+    font-family: $font;
+    font-size: $fontSize;
+}
+
+#topHeader{
+    color: $topHcolor;
+}

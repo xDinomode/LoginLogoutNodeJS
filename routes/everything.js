@@ -14,12 +14,12 @@ module.exports = function(passport){
 
     Router.get("/", function(req, res){
     if(req.isAuthenticated()) res.redirect("/admin");
-    res.render("index", {message: req.flash("loginMessage")});
+    res.render("index", {message: req.flash("loginMessage"), csrf: req.csrfToken() });
 });
 
 Router.get("/signup", function(req, res){
     if(req.isAuthenticated()) res.redirect("/admin");
-    res.render("signup", {message: req.flash("signupMessage")});
+    res.render("signup", {message: req.flash("signupMessage"), csrf: req.csrfToken() });
 });
 Router.post("/signup", passport.authenticate("local-signup", {
     successRedirect:"/admin",
